@@ -11,19 +11,17 @@ const Seats = () => {
 
   const fetchData = async() => {
     axios
-    .get("https://cubical-backend-server.onrender.com/api/v1/entrance/cubical",{headers:{"Authorization":`Bearer ${localStorage.getItem("_token")}`}})
+    .get("/getCubicleList",{headers:{"Authorization":`Bearer ${localStorage.getItem("_token")}`}})
     .then((response) => {
-      console.log(response)
+      setCubicles(response.data.result)
     })
     .catch((err) => console.log(err));
     
   }
 
   const cubes = cubicles.map((cubicle,index)=>{
-    if(index>10){
-      return
-    }
-        return <Seat key={index} id={cubicle.id} seatColor={Math.floor(Math.random() * (2 - 0 + 1)) + 0}/>
+  //  console.log(cubicle.status);
+        return <Seat key={index} id={cubicle.id} seatColor={cubicle.cubicalStatus?"1":"0"}/>
     
   })
 

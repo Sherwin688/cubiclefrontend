@@ -31,7 +31,7 @@ const handleSubmit  = async(e) => {
 // }
 // )
 axios
-    .post("https://cubical-backend-server.onrender.com/api/v1/entrance/login",{"email":email,"password":password})
+    .post("loginUser",{"email":email,"password":password})
     .then((response) => {
       console.log(response)
       localStorage.setItem("_token",response.data.result.token)
