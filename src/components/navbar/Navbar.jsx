@@ -11,7 +11,7 @@ const [showLogin,setShowLogin] = useState(false)
     <>
     <div className="navbar">
       <div className="navContainer">
-        {/* <span className="logo"> <Logo/></span> */}
+        <span className="logo">bookMyCubicle</span>
         <div className="navItems">
           <button className="navButton" onClick={()=> window.location.href = '/register'}>Register</button>
           <button className="navButton" onClick={()=> window.location.href = '/login'}>Login</button>
